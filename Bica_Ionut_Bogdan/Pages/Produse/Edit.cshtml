@@ -1,0 +1,60 @@
+﻿@page
+@model Bica_Ionut_Bogdan.Pages.Produse.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Produs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Produs.ID" />
+            <div class="form-group">
+                <label asp-for="Produs.produsNume" class="control-label"></label>
+                <input asp-for="Produs.produsNume" class="form-control" />
+                <span asp-validation-for="Produs.produsNume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produs.produsDescriere" class="control-label"></label>
+                <input asp-for="Produs.produsDescriere" class="form-control" />
+                <span asp-validation-for="Produs.produsDescriere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produs.produsSeal" class="control-label"></label>
+                <input asp-for="Produs.produsSeal" class="form-control" />
+                <span asp-validation-for="Produs.produsSeal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produs.produsExp" class="control-label"></label>
+                <input asp-for="Produs.produsExp" class="form-control" />
+                <span asp-validation-for="Produs.produsExp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produs.CategorieAlergiiID" class="control-label"></label>
+                <select asp-for="Produs.CategorieAlergiiID" class="form-control" asp-items="ViewBag.CategorieAlergiiID"></select>
+                <span asp-validation-for="Produs.CategorieAlergiiID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produs.LocatieDepoziteID" class="control-label"></label>
+                <select asp-for="Produs.LocatieDepoziteID" class="form-control" asp-items="ViewBag.LocatieDepoziteID"></select>
+                <span asp-validation-for="Produs.LocatieDepoziteID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

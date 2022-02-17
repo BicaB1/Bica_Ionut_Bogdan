@@ -1,0 +1,58 @@
+﻿@page
+@model Bica_Ionut_Bogdan.Pages.Produse.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Produs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.produsNume)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.produsNume)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.produsDescriere)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.produsDescriere)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.produsSeal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.produsSeal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.produsExp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.produsExp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.CategorieAlergii)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.CategorieAlergii.catAlergii)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.LocatieDepozite)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.LocatieDepozite.locatieDepozit)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Produs.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

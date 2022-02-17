@@ -1,0 +1,55 @@
+﻿@page
+@model Bica_Ionut_Bogdan.Pages.Produse.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Produs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.produsNume)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.produsNume)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.produsDescriere)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.produsDescriere)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.produsSeal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.produsSeal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.produsExp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.produsExp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.CategorieAlergii)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.CategorieAlergii.catAlergii)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Produs.LocatieDepozite)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produs.LocatieDepozite.locatieDepozit)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Produs.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
